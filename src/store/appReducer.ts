@@ -16,7 +16,6 @@ export const appReducer = (state = initialState, action: ActionsType): InitialSt
 
 export const setAppLoading = (value: boolean) =>
   ({type: 'APP/SET_LOADING_STATUS', value} as const)
-
 export const setError = (value: string) =>
   ({type: 'APP/SET_ERROR', value} as const)
 

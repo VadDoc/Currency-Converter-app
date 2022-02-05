@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Route, Routes} from 'react-router-dom';
+import {Route, Routes, Navigate} from 'react-router-dom';
 import './App.css';
 import {Converter} from "../pages/Converter/Converter";
 import {useDispatch, useSelector} from "react-redux";
@@ -8,6 +8,7 @@ import {LoadingLine} from "../../common/components/LoadingLine/LoadingLine";
 import {ExchangeRates} from "../pages/ExchangeRates/ExchangeRates";
 import {Navigation} from "../../common/components/Navigation/Navigation";
 import {getCurrencyApi} from "../../store/thunks";
+import {Page404} from "../pages/Page404/Page404";
 
 function App() {
   const {loading, error} = useSelector<AppStoreType, { [key: string]: boolean | string }>((state) => state.appReducer);
@@ -23,6 +24,8 @@ function App() {
       {error ? <div className={'error-message'}>{error}</div> :
         <>
           <Routes>
+            <Route path={'404'} element={<Page404/>}/>
+            <Route path={'/*'} element={<Navigate to={'404'}/>}/>
             <Route path={'/'} element={<Converter/>}/>
             <Route path={'converter'} element={<Converter/>}/>
             <Route path={'exchange-rates'} element={<ExchangeRates/>}/>

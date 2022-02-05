@@ -1,0 +1,19 @@
+.page404 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px 50px;
+  border-radius: 10px;
+  min-height: 440px;
+  width: 445px;
+  box-sizing: border-box;
+
+  h1, h2 {
+    text-align: center;
+    font-size: 30px;
+  }
+
+  h1 {
+    font-size: 70px;
+  }
+}
