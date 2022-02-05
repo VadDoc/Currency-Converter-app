@@ -1,0 +1,13 @@
+.converter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px 70px;
+  border-radius: 10px;
+  min-height: 440px;
+  box-sizing: border-box;
+
+  h4 {
+    margin-bottom: 0;
+  }
+}
